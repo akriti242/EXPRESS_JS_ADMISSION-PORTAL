@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>University</title>
+  <link rel="stylesheet" href="css/style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital@1&family=Poppins:wght@200;300;400;600;700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+   <!-- bs link -->
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+   integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+   integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+   crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <section class="sub-header" style="
+        background: linear-gradient(rgba(10, 10, 10, 0.5), rgba(4, 9, 30, 0.7)),
+          url(images/banner2.jpg);
+        background-position: center;
+        background-size: cover;
+      ">
+  <nav>
+    <a href="home.html"> <img src="images/LNCT-Logo.png" /></a>
+
+    <div class="nav-links" id="navLinks">
+      <i class="fa fa-xmark" onclick="hidemenu()"></i>
+      <ul>
+        <li class="hvr"><a href="/dashboard"> Home</a></li>
+        <li class="hvr"> <a href="/about"> About</a></li>
+        <li class="hvr"><a href="/course"> Course</a></li>
+        <li class="hvr"><a href="/blog"> Blog</a></li>
+        <li class="hvr"><a href="/contact"> Contact</a></li>
+        <li class="nav-item dropdown" style="text-decoration: none;">
+          <a class="nav-link dropdown-toggle text-light p-1 text-uppercase" href="#" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false" style=" background: #00000082 !important;">
+              <%= n %>
+          </a>
+          <ul class="dropdown-menu">
+
+              <li><a class="dropdown-item text-dark" href="/profile">Profile</a></li>
+              <!-- <li><hr class="dropdown-divider text-dark"></li> -->
+              <!--  <li><a class="dropdown-item text-dark" href="#">Logout</a></li> -->
+              <li class="nav-item my-auto">
+                  <button class="btn btn-primary btn-sm border-light"> <a id="rmv" href="/logout">Logout</a> </button>
+              </li>
+          </ul>
+      </li>
+      <img src="<%=  i.url %>" width="40" height="40" class="rounded-circle">
+      </ul>
+    </div>
+    <i class="fa fa-bars" onclick="showmenu()"></i>
+  </nav>
+
+    <h1> Our Certificate & Online Programs</h1>
+  </section>
+
+  <!-- ========= blog page content ==========  -->
+
+<section class="blog-content">
+  <div class="row">
+<div class="blog-left">
+<img src="images/certificate.jpg" >
+<h2> Our Certificate & Online Programs</h2>
+<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem dignissimos totam voluptate rem corrupti dicta in voluptates sint odit. Itaque sint iste rerum eos iusto corporis aperiam numquam beatae aliquid?</p> <br>
+
+<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam dolore iure amet aperiam, ex ad maxime! Voluptatibus, doloremque ipsum at, iusto esse deserunt explicabo voluptates totam quisquam, minus ratione alias? Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores officiis beatae ipsum accusantium odit inventore vel nostrum, esse officia aperiam non quibusdam porro nulla nesciunt exercitationem placeat culpa suscipit vero.  Voluptatem dignissimos totam voluptate rem corrupti </p> <br>
+
+<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium libero blanditiis omnis impedit, neque excepturi officiis iste. Minima, fuga voluptatem dolorem optio .</p> <br>
+
+<p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque consectetur error corporis numquam quidem officiis beatae at non. Mollitia soluta molestiae iusto ut sapiente enim rerum aperiam beatae omnis deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima fuga aliquid impedit delectus tempora possimus, quos sed et accusantium similique voluptate blanditiis exercitationem odit distinctio rerum quasi explicabo quibusdam? Sit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi odit possimus, officia, hic fugiat debitis sapiente cumque pariatur eligendi unde distinctio corporis saepe accusantium atque eveniet consectetur minus blanditiis incidunt?</p>
+
+
+
+<div class="comment-box">
+
+<h3> Leave a Comment</h3>
+
+<form class="comment-form">
+  <input type="text" placeholder="Enter Name">
+  <input type="email" placeholder="Enter Email">
+  <textarea rows="5" placeholder="Your Comment"></textarea>
+  <button type="submit"class="visit-btn btn-color text-dark " > POST COMMENT</button>
+</form>
+
+</div>
+</div>
+
+<div class="blog-right">
+ <h3> <span style="margin-left: 100px;"> Post Categories</span></h3>
+
+ <div>
+   <span> VLSI Design</span>
+   <span> 21</span>
+</div>
+
+<div>
+  <span>Master Of Business Administration</span>
+  <span> 45</span>
+</div>
+
+<div>
+  <span> Computer Science & Engineering</span>
+  <span> 26</span>
+</div>
+
+<div>
+  <span> AutoCAD</span>
+  <span> 54</span>
+</div>
+
+<div>
+  <span> Master Of Computer Application</span>
+  <span> 18</span>
+</div>
+
+<div>
+  <span> Technology & Management</span>
+  <span> 38</span>
+</div>
+
+
+</div>
+  </div>
+</section>
+  <!-- ===== footer ====== -->
+
+  <%- include('./footer.ejs')    %> 

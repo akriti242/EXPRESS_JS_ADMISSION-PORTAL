@@ -1,0 +1,34 @@
+
+========  express js install
+
+
+======= npm init 
+
+===== enter enter enter enter
+
+====== (yes) y 
+
+======= npm i express
+
+
+in js file========= (app.js)  ========= const express = require('express')
+
+// console.log(express);
+// ======then========= run in terminal =========== nodemon ==
+
+
+const app = express()
+const port = 3000
+
+
+
+// server create 
+
+app.listen(port, ()= > {
+    console.log('server start localhost:3000')
+})
+
+======then========= run in terminal =========== nodemon ==
+
+
+

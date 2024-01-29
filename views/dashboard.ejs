@@ -1,0 +1,472 @@
+<%- include('./header.ejs') %>
+
+    <!-- ====== wave pattern ======== -->
+    <div id="waves">
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox=" 0 0 1440 320  ">
+            <path fill="#fff" fill-opacity="1"
+                d="M0,256L48,250.7C96,245,192,235,288,245.3C384,256,480,288,576,261.3C672,235,768,149,864,133.3C960,117,1056,171,1152,186.7C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+            </path>
+        </svg>
+        <h1> LNCT College | 30+ Years of Academic Excellence and Discipline.
+        </h1>
+        <span>
+            <hr>
+        </span>
+    </div>
+
+
+
+    <!-- ======= course start======== -->
+
+    <section class="course">
+        <h1>Courses We Offer</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero quis
+            architecto animi ipsam?
+        </p>
+
+
+        <div class="row">
+            <div class="course-col">
+                <h3> Engineering</h3>
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur
+                    molestias porro sunt non dolore nulla aperiam, quos in, illo
+                    corporis dignissimos. Eum voluptas quaerat in repudiandae earum,
+                    nobis dicta temporibus.
+                </p>
+
+                <% if(btech){ %>
+                    <a href="/courseDisplay" class="btn btn-info"> Course Display </a>
+
+                    <% } else { %>
+                        <button type="button" class="btn text-light" data-bs-toggle="modal" data-bs-target="#btech"
+                            style="border: 2px solid white;">
+                            Register</button>
+
+                        <% } %>
+
+            </div>
+
+            <div class="course-col">
+                <h3> Management</h3>
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur
+                    molestias porro sunt non dolore nulla aperiam, quos in, illo
+                    corporis dignissimos. Eum voluptas quaerat in repudiandae earum,
+                    nobis dicta temporibus.
+                </p>
+
+                <% if(bba){ %>
+                    <a href="/courseDisplay" class="btn btn-info"> Course Display </a>
+
+                    <% } else { %>
+                        <button type="button" class="btn text-light" data-bs-toggle="modal" data-bs-target="#bba"
+                            style="border: 2px solid white;">
+                            Register</button>
+
+                        <% } %>
+
+            </div>
+
+            <div class="course-col">
+                <h3> Computer Application</h3>
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur
+                    molestias porro sunt non dolore nulla aperiam, quos in, illo
+                    corporis dignissimos. Eum voluptas quaerat in repudiandae earum,
+                    nobis dicta temporibus.
+                </p>
+
+                <% if(bca){ %>
+                    <a href="/courseDisplay" class="btn btn-info"> Course Display </a>
+
+                    <% } else { %>
+                        <button type="button" class="btn text-light" data-bs-toggle="modal" data-bs-target="#bca"
+                            style="border: 2px solid white;">
+                            Register</button>
+
+                        <% } %>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= course end ======== -->
+
+    <!-- btech Modal start -->
+    <div class="modal fade" id="btech" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">BTech Admission Form</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- --- btech form --- -->
+                    <form action="/btechFormInsert" method="post">
+                        <div class="input-group mb-2">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Username</span>
+                            <input type="text" name="name" class="form-control" required>
+                        </div>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                            <input type="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Mobile No</span>
+                            <input type="tel" name="mobileNo" class="form-control" required>
+                        </div>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text" id="inputGroup-sizing-default"> DOB</span>
+                            <input type="date" name="dob" class="form-control" required>
+                        </div>
+
+                        <div class=" mb-2">
+                            <label class="mb-2"> Gender</label> <br>
+                            <input type="radio" name="gender" value="male"> &nbsp; Male
+                            <input type="radio" name="gender" value="female"> &nbsp; Female
+                            <br>
+                        </div>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Address</span>
+                            <textarea class="form-control" name="address" id="" cols="" rows="" required></textarea>
+                        </div>
+
+                        <div class="input-group mb-2">
+                            <label class="input-group-text" for="inputGroupSelect01"> College</label> <br>
+                            <select class="form-select" name="college" id="" required>
+                                <option selected="">Choose..</option>
+                                <option value="IIT Bombay"> IIT Bombay </option>
+                                <option value="IIT Kota"> IIT Kota </option>
+                                <option value="IIT Kharagpur"> IIT Kharagpur </option>
+                            </select>
+                        </div>
+
+                        <div class="input-group mb-2">
+                            <label class="input-group-text" for="inputGroupSelect01"> Course</label> <br>
+                            <select class="form-select" name="course" id="" required>
+                                <option selected="">Choose...</option>
+                                <option value="B.Tech"> B.Tech </option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-2">
+                            <label class="input-group-text" for="inputGroupSelect01"> Branch</label> <br>
+                            <select class="form-select" name="branch" id="" required>
+                                <option selected="">Choose..</option>
+                                <option value="IT"> IT </option>
+                                <option value="CS"> CS </option>
+                                <option value="Electronic"> Electronic </option>
+                            </select>
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-lg btn-block px-2"
+                                style="background: rgb(240, 133, 26);"> Register</button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- btech Modal end -->
+
+    <!-- bba Modal start -->
+    <div class="modal fade" id="bba" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">BBA Admission Form</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <!-- --- bba form --- -->
+                    <form action="/bbaFormInsert" method="post">
+                        <div class="input-group mb-2">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Username</span>
+                            <input type="text" name="name" class="form-control" required>
+                        </div>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                            <input type="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Mobile No</span>
+                            <input type="tel" name="mobileNo" class="form-control" required>
+                        </div>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text" id="inputGroup-sizing-default"> DOB</span>
+                            <input type="date" name="dob" class="form-control" required>
+                        </div>
+
+                        <div class=" mb-2">
+                            <label class="mb-2"> Gender</label> <br>
+                            <input type="radio" name="gender" value="male"> &nbsp; Male
+                            <input type="radio" name="gender" value="female"> &nbsp; Female
+                            <br>
+                        </div>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Address</span>
+                            <textarea class="form-control" name="address" id="" cols="" rows="" required></textarea>
+                        </div>
+
+                        <div class="input-group mb-2">
+                            <label class="input-group-text" for="inputGroupSelect01"> College</label> <br>
+                            <select class="form-select" name="college" id="" required>
+                                <option selected="">Choose..</option>
+                                <option value="IIT Bombay"> IIT Bombay </option>
+                                <option value="IIT Kota"> IIT Kota </option>
+                                <option value="IIT Kharagpur"> IIT Kharagpur </option>
+                            </select>
+                        </div>
+
+                        <div class="input-group mb-2">
+                            <label class="input-group-text" for="inputGroupSelect01"> Course</label> <br>
+                            <select class="form-select" name="course" id="" required>
+                                <option selected="">Choose...</option>
+                                <option value="BBA"> BBA </option>
+                                <option value="BCOM"> B.COM </option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-2">
+                            <label class="input-group-text" for="inputGroupSelect01"> Branch</label> <br>
+                            <select class="form-select" name="branch" id="" required>
+                                <option selected="">Choose..</option>
+                                <option value="PLAIN"> PLAIN </option>
+                                <option value="ADVANCE"> ADVANCE </option>
+                            </select>
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-lg btn-block px-2"
+                                style="background: rgb(240, 133, 26);"> Register</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- bba Modal end -->
+
+    <!-- BCA Modal start -->
+    <div class="modal fade" id="bca" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">BCA Admission Form</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <!-- --- bca form --- -->
+                    <form action="/bcaFormInsert" method="post">
+                        <div class="input-group mb-2">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Username</span>
+                            <input type="text" name="name" class="form-control" required>
+                        </div>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                            <input type="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Mobile No</span>
+                            <input type="tel" name="mobileNo" class="form-control" required>
+                        </div>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text" id="inputGroup-sizing-default"> DOB</span>
+                            <input type="date" name="dob" class="form-control" required>
+                        </div>
+
+                        <div class=" mb-2">
+                            <label class="mb-2"> Gender</label> <br>
+                            <input type="radio" name="gender" value="male"> &nbsp; Male
+                            <input type="radio" name="gender" value="female"> &nbsp; Female
+                            <br>
+                        </div>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Address</span>
+                            <textarea class="form-control" name="address" id="" cols="" rows="" required></textarea>
+                        </div>
+
+                        <div class="input-group mb-2">
+                            <label class="input-group-text" for="inputGroupSelect01"> College</label> <br>
+                            <select class="form-select" name="college" id="" required>
+                                <option selected="">Choose..</option>
+                                <option value="IIT Bombay"> IIT Bombay </option>
+                                <option value="IIT Kota"> IIT Kota </option>
+                                <option value="IIT Kharagpur"> IIT Kharagpur </option>
+                            </select>
+                        </div>
+
+                        <div class="input-group mb-2">
+                            <label class="input-group-text" for="inputGroupSelect01"> Course</label> <br>
+                            <select class="form-select" name="course" id="" required>
+                                <option selected="">Choose...</option>
+                                <option value="BCA"> BCA </option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-2">
+                            <label class="input-group-text" for="inputGroupSelect01"> Branch</label> <br>
+                            <select class="form-select" name="branch" id="" required>
+                                <option selected="">Choose..</option>
+                                <option value="PLAIN"> PLAIN </option>
+                                <option value="AI/ML"> AI/ML </option>
+                            </select>
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-lg btn-block px-2"
+                                style="background: rgb(240, 133, 26);"> Register</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- BCA Modal end -->
+
+    <!-- ======== campus start ======== -->
+
+    <section class="campus">
+        <h1>Our Global Campus</h1>
+        <span>
+            <hr>
+        </span>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa sint minus
+            quo neque.
+        </p>
+
+        <div class="row">
+            <div class="campus-col">
+                <img src="images/lnct-campus1.jpg" />
+                <div class="layer">
+                    <h3> BANGALORE</h3>
+                </div>
+            </div>
+
+            <div class="campus-col">
+                <img src="images/lnct-campus2.jpg" />
+                <div class="layer">
+                    <h3> HYDERABAD </h3>
+                </div>
+            </div>
+
+            <div class="campus-col">
+                <img src="images/lnct-campus3.jpg" />
+                <div class="layer">
+                    <h3> NOIDA </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= campus end ======== -->
+
+
+    <!-- ====== facilities start ======= -->
+
+    <section class="facility">
+        <h1>Our Facilities</h1>
+        <span>
+            <hr>
+        </span>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+            adipisci voluptatibus, quidem laudantium velit .
+        </p>
+
+        <div class="row">
+            <div class="facility-col">
+                <img src="images/lnct-library.jpg" />
+                <h3>World Class Library</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+
+            <div class="facility-col">
+                <img src="images/lnct-games.jpg" />
+                <h3>Largest Playground</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+
+            <div class="facility-col">
+                <img src="images/lnct-canteen.jpg" />
+                <h3>Tasty & Healthy Food</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== facilities end ======= -->
+
+    <!-- ======= testimonials start ======= -->
+
+    <section class="testimonials">
+        <h1>What Our Students Say</h1>
+        <span>
+            <hr>
+        </span>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+        <div class="row">
+            <div class="testimonial-col">
+                <img src="images/user1.jpg" />
+                <div>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Similique dolor aliquam harum ratione distinctio! Fuga omnis
+                        officia fugit autem facilis.
+                    </p>
+                    <h3>Random User 1</h3>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+            </div>
+
+            <div class="testimonial-col">
+                <img src="images/user1.jpg" />
+                <div>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Similique dolor aliquam harum ratione distinctio! Fuga omnis
+                        officia fugit autem facilis.
+                    </p>
+                    <h3>Random User 2</h3>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-stroke"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= testimonials end ======= -->
+
+
+    <!-- ====== call to action  start ===== -->
+
+    <section class="call" style="
+background: linear-gradient(rgba(10, 10, 10, 0.5), rgba(4, 9, 30, 0.7)),
+  url(images/discuss.jpg);
+  background-position: center;
+   background-size: cover;">
+        <h1>
+            Enroll For Our Various Online Courses <br>Anywhere From The World
+        </h1>
+        <a href="/contact" class="visit-btn"> CONTACT US</a>
+    </section>
+
+    <!-- ====== call to action  end ===== -->
+
+    <%- include('./footer.ejs') %>

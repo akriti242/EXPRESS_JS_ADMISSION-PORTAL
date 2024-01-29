@@ -1,0 +1,199 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: raleway;
+}
+
+body {
+    display: block;
+    color: aliceblue;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 700px;
+    padding: 40px;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 1);
+}
+
+form h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 400;
+}
+
+.left-container,
+.right-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+    align-items: flex-start;
+}
+
+
+
+.input-box-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 80%;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 2px solid white;
+    border-radius: 20px;
+    height: 38px;
+}
+
+.input-box input {
+    outline: none;
+    color: aliceblue;
+    padding: 3px 17px;
+    border: none;
+    background: none;
+    font-size: 14px;
+    width: 98%;
+    float: left;
+}
+
+::placeholder {
+    color: aliceblue;
+
+}
+
+.password-setting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 10px;
+}
+
+.password-setting .remember-box {
+    display: flex;
+    cursor: pointer;
+}
+
+.password-setting #remember {
+    margin-right: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+.remember-box label {
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+}
+
+.password-setting2 .forget-password {
+    font-size: 18px;
+    color: aliceblue;
+}
+
+
+/* ==== button css ==== */
+
+.btn-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 80%;
+    width: 100%;
+}
+
+button.btn {
+    width: 100%;
+    border-radius: 20px;
+    background: linear-gradient(35deg, rgb(240, 240, 240), rgb(105, 216, 228), rgba(105, 216, 228, 0.5));
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 2px solid black;
+    transition: 0.3s;
+    margin-bottom: 20px;
+    height: 38px;
+
+}
+
+button.btn:hover {
+    border: 2px solid black;
+    font-weight: 600;
+    background: linear-gradient(35deg, rgba(105, 216, 228, 1), rgba(105, 216, 228, 0.5), rgb(240, 240, 240));
+
+}
+
+
+/* === register btn === */
+center.lastline {
+    font-size: 20px;
+    color: aliceblue;
+    padding: 10px 20px;
+}
+
+button.sign-up {
+    width: 100%;
+    height: 38px;
+    border: 2px solid black;
+
+    outline: 0;
+    border-radius: 20px;
+    background: linear-gradient(35deg, rgb(240, 240, 240), rgb(105, 216, 228), rgba(105, 216, 228, 0.5));
+}
+
+button a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+
+}
+
+button a:hover {
+    padding: 0;
+font-weight: 600;
+}
+
+button.sign-up:hover {
+    background: rgba(105, 216, 228, 0.5);
+    padding: 0;
+
+
+}
+
+@media (max-width:700px){
+    center.lastline{
+        font-size: 15px;
+        padding: 0 auto;
+    }
+
+    .password-setting2 .forget-password{
+        font-size: 15px;
+        padding: 0 auto;
+    }
+
+   
+}

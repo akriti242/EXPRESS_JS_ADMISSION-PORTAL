@@ -2,7 +2,7 @@ const express = require('express')
 const FrontController = require('../controllers/frontController')
 const route = express.Router()
 const checkUserAuth = require('../middleware/auth')
-const CourseController = require('../controllers/courseController')
+const CourseController = require('../controllers/CourseController')
 const AdminController = require('../controllers/AdminController')
 // const CourseController = require('../controllers/CourseController')
 
@@ -46,7 +46,11 @@ route.get('/logout', FrontController.logOut)
 route.post('/updateProfile', checkUserAuth, FrontController.updateProfile)
 route.post('/changePassword', checkUserAuth, FrontController.changePassword)
 route.get('/forget-password', FrontController.forgetPassword)
+route.post('/forget-password', FrontController.forgetVerify)
 
+
+
+route.get('/verify', FrontController.verifyEmail)
 
 // COURSE CONTROLLER
 route.post('/btechFormInsert', checkUserAuth, CourseController.btechFormInsert)

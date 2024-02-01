@@ -8,6 +8,8 @@ const UserModel = require('../models/user')
 const TeacherModel = require('../models/teacher')
 const bcrypt = require("bcrypt"); // pwd encryption
 
+const nodemailer = require('nodemailer');
+
 const jwt = require('jsonwebtoken');  // token generate
 const CourseModel = require('../models/course');
 
@@ -135,8 +137,14 @@ class FrontController {
 
             })
 
-            await result.save()
-            res.redirect('/')
+            const userData = await result.save()
+
+            if (userData) {
+              this.sendVerifyMail(n, e, userData._id);
+              req.flash('error', 'Please verify your email')
+              res.redirect('/')
+            }
+
 
           }
           else {
@@ -156,6 +164,69 @@ class FrontController {
       console.log(error)
     }
   }
+
+
+  //verify email
+
+  static sendVerifyMail = async (name, email, user_id) => {
+    // sendVerifyMail(n, e, user._id)
+
+    let transporter = await nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false,
+      requireTLS: true,
+      auth: {
+        user: 'arokritika278@gmail.com',
+        pass: "buzzphwxpiwvcavu",
+      }
+    });
+
+    // let info = await transporter.sendVerifyMail({
+    //   from: "test@gmail.com",
+    //   to: email,
+    //   subject: `For Email Verification`,
+    //   html: '<p> Hi! ' + name + ', please click here to <a href="http://localhost:3000/verify?id='+user_id+'"> Verify </a> your mail. </p> '
+
+    // });
+
+
+    const mailOption = {
+      from: 'arokritika278@gmail.com',
+      to: email,
+      subject: 'for Verification Email',
+      html: '<p> Hi! ' + name + ', please click here to <a href="http://localhost:3000/verify?id=' + user_id + '"> Verify </a> your mail. </p> '
+    }
+
+    transporter.sendMail(mailOption, function (error, info) {
+      if (error) {
+        console.log(error);
+      }
+      else {
+        console.log("Email has been sent:- ", info.response);
+      }
+    })
+
+
+
+
+
+  }
+
+
+  static verifyEmail = async (req, res) => {
+    try {
+      const updateInfo = await UserModel.updateOne({ _id: req.query.id }, { $set: { is_verified: 1 } });
+
+      console.log(updateInfo);
+      res.render("email-verified");
+    }
+    catch (error) {
+      console.log(error)
+    }
+  }
+
+  //verify LOGIN
 
   static verifyLogin = async (req, res) => {
     try {
@@ -203,7 +274,7 @@ class FrontController {
         res.redirect('/')
       }
     } catch (error) {
-
+      console.log('error')
     }
   }
 
@@ -217,6 +288,8 @@ class FrontController {
     }
   }
 
+
+  // USER PROFILE 
   static profile = async (req, res) => {
     try {
       const { name, image, email } = req.user
@@ -305,10 +378,14 @@ class FrontController {
     }
   }
 
+
+  // FORGET PASSWORD 
   static forgetPassword = async (req, res) => {
     try {
-      // const {email} = req.body;
 
+      // console.log(req.body)
+
+      // const {email} = req.body;
       // const user = users.find((user) => user.email === email);
       // if(!user) {
 
@@ -320,6 +397,21 @@ class FrontController {
     }
   }
 
+
+  static forgetVerify = async (req, res) => {
+    try {
+
+      const email = req.body.email;
+      const user = await UserModel.findOne({ email: email });
+      if (user) {
+
+      } else {
+        res.render('forget-password', { message: "incorrect email" });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
 }
 

@@ -247,17 +247,22 @@ class FrontController {
               res.cookie('token', token)
               res.redirect('/admin/dashboard')
             }
+            if(user.is_verified === 0){
+              res.render('login', {message:"please verify your mail."})
+            }
             if (user.role == 'user') {
               const token = jwt.sign({ ID: user._id }, 'honey123456money');
               // console.log(token)
               res.cookie('token', token)
               res.redirect('/dashboard')
             }
+
             // jwt token for security
             const token = jwt.sign({ ID: user._id }, 'honey123456money');
             // console.log(token)
             res.cookie('token', token)
             res.redirect('/dashboard')
+
           }
           else {
             req.flash('error', 'Email or Password is not Valid.')

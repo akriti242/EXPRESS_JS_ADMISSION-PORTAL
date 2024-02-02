@@ -219,7 +219,7 @@ class FrontController {
       const updateInfo = await UserModel.updateOne({ _id: req.query.id }, { $set: { is_verified: 1 } });
 
       console.log(updateInfo);
-      res.render("email-verified");
+      res.render('/email-verified');
     }
     catch (error) {
       console.log(error)

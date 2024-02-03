@@ -195,7 +195,7 @@ class FrontController {
       from: 'arokritika278@gmail.com',
       to: email,
       subject: 'for Verification Email',
-      html: '<p> Hi! ' + name + ', please click here to <a href="http://localhost:3000/verify?id=' + user_id + '"> Verify </a> your mail. </p> '
+      html: '<p> Hi! ' + name + ', please click here to <a href="https://admission-portal-xzpt.onrender.com//verify?id=' + user_id + '"> Verify </a> your mail. </p> '
     }
 
     transporter.sendMail(mailOption, function (error, info) {

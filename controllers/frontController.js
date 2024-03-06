@@ -435,7 +435,7 @@ class FrontController {
       html:
         "<p> Hi! " +
         name +
-        ', please click here to <a href="http://localhost:3000/reset-password?token=' +
+        ', please click here to <a href="https://admission-portal-xzpt.onrender.com/reset-password?token=' +
         token +
         '"> Reset </a> your password. </p> ',
       //https://admission-portal-xzpt.onrender.com/forget-password?token='

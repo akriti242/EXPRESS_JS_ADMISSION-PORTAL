@@ -20,7 +20,7 @@ const UserSchema = new mongoose.Schema({
     },
     image: {
         public_id: {
-          type: String,
+          type: String, 
           required: true,
         },
         url: {
@@ -31,6 +31,10 @@ const UserSchema = new mongoose.Schema({
       is_verified:{
         type:Number,
         default:0
+      },
+      token:{
+        type:String,
+        default:''
       }
 },{timestamps:true})
 

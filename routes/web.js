@@ -45,9 +45,15 @@ route.post('/verifylogin', FrontController.verifyLogin)
 route.get('/logout', FrontController.logOut)
 route.post('/updateProfile', checkUserAuth, FrontController.updateProfile)
 route.post('/changePassword', checkUserAuth, FrontController.changePassword)
+
+// forget password
 route.get('/forget-password', FrontController.forgetPassword)
 route.post('/forget-password', FrontController.forgetVerify)
 
+//reset password
+route.get('/reset-password',FrontController.resetPassword)
+
+route.post('/reset_Password1',FrontController.reset_Password1)
 
 
 route.get('/verify', FrontController.verifyEmail)
